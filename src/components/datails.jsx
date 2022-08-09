@@ -9,7 +9,6 @@ import { getDetailProduct } from '../actions/product'
 
 const Details = () => {
   const { id } = useParams();
-  console.log({ id });
   const itemsBreads = localStorage.getItem('breads').split('-');
 
   const product = useSelector(state => state.product);

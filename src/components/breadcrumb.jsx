@@ -5,11 +5,11 @@ const Bread = ({ itemsBreads }) => {
   return (
     <Row>
       <Col>
-      <Breadcrumb>
+      <Breadcrumb className='breadcrumbs'>
         {
           itemsBreads.map((item, key) => {
             return (
-              <Breadcrumb.Item key={ key } href="#">
+              <Breadcrumb.Item key={ key } href='#'>
                 { item }
               </Breadcrumb.Item>
             )

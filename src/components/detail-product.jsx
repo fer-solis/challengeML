@@ -11,24 +11,30 @@ const DetailProduct = ({ product }) => {
     price = '',
     title = '',
   } = product;
+
   const img = pictures.length ? pictures[0].url : null;
+
   return (
-    <Row>
+    <Row className='bg-white containerDetails'>
       <Col className='product'>
-        <div className='product-content d-flex'>
-          <Image src={ img } className='product-content-img' />
-          <div className='product-content-details'>
-            <small>
-              { condition === 'new' ? 'Nuevo' : null } - 2434 vendidos
-            </small>
-            <h1>
-              { title }
-            </h1>
-            <h3>
-              $ { price.toLocaleString('en') }
-            </h3>
-            <Button variant="primary">Comprar</Button>
-          </div>
+        <div className='product-content d-flex flex-sm-column flex-lg-row'>
+          <Col sm={ 12 } md={ 12 } lg={ 9 } >
+            <Image src={ img } className='product-content-img img-fluid w-100' />
+          </Col>
+          <Col sm={ 12 } md={ 12 } lg={ 3 }>
+            <div className='product-content-details'>
+              <small>
+                { condition === 'new' ? 'Nuevo' : null } - 2434 vendidos
+              </small>
+              <h1>
+                { title }
+              </h1>
+              <h3>
+                $ { price.toLocaleString('en') }
+              </h3>
+              <Button variant="primary" className='w-100 btn-lg btn-buy'>Comprar</Button>
+            </div>
+          </Col>
         </div>
         <div className='product-description'>
           <h2 className='product-description-title'>

@@ -26,30 +26,33 @@ const NavBar = () => {
  }
 
   return (
-    <Navbar className='navbar-wrapper' expand="lg">
+    <Navbar className='navbar-wrapper' expand='lg'>
       <Container className='d-flex col-lg-10 offset-lg-1'>
-        <Navbar.Brand href="/">
+        <Navbar.Brand href='/'>
           <Image src={ logo } fluid={ true } />
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
+        <Navbar.Toggle aria-controls='navbarScroll' />
+        <Navbar.Collapse id='navbarScroll'>
           <Nav
-            className="me-auto my-2 my-lg-0 w-100"
+            className='me-auto my-2 my-lg-0 w-100'
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Form className="d-flex w-100" noValidate validated={validated} onSubmit={handleSubmit} >
+            <Form className='d-flex w-100' noValidate validated={ validated } onSubmit={ handleSubmit }>
               <Form.Control
-                type="search"
-                placeholder="Nunca dejes de buscar"
-                className="searchBox"
-                aria-label="Search"
-                required
+                aria-label='Search'
+                className='searchBox'
                 name='search'
-                value={find} onChange={val => setFind(val.target.value)}
+                placeholder='Nunca dejes de buscar'
+                required
+                type='search'
+                value={ find } onChange={ val => setFind(val.target.value) }
               />
-              <Button variant="outline-success" type="submit">
-                <Image src={ search } fluid={ true } />
+              <Button
+                className='containerSearchIcon'
+                type='submit'
+                variant='outline-success'>
+                  <Image src={ search } fluid={ true } />
               </Button>
             </Form>
           </Nav>

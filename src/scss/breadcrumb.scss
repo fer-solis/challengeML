@@ -1,3 +1,32 @@
 .breadcrumb-item + .breadcrumb-item::before {
+  color: $place-holder;
   content: '>';
+}
+
+.breadcrumb-item {
+  a {
+    color: $place-holder;
+    text-decoration: none;
+  }
+
+  &:last-child {
+    a {
+      font-weight: bold;
+    }
+  }
+}
+
+.breadcrumbs {
+  font-size: 14px;
+}
+
+.breadcrumb {
+  margin: 16px 0;
+}
+
+//mobile
+@media screen and (max-width: 767px) {
+  .breadcrumbs {
+    font-size: 10px;
+  }
 }

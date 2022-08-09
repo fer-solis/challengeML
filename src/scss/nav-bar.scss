@@ -2,12 +2,69 @@
   background-color: $color-primary;
 }
 
+.navbar-brand {
+  margin-right: 32px;
+}
+
 .searchBox {
   border: none;
-  border-radius: 4% 0% 0% 4%;
+  border-radius: 4px 0 0 4px;
   font-size: 18px;
 
   &::placeholder {
     color: $place-holder;
+  }
+
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.containerSearchIcon {
+  background-color: $bg-searchIcon;
+  border-color: transparent;
+  border-radius: 0 4px 4px 0;
+
+  &:hover, &:active, &:focus, &:focus-visible {
+    background-color: $place-holder;
+    border-color: transparent;
+    box-shadow: none;
+    outline-color: $bg-searchIconFocus;
+  }
+}
+
+.navbar-toggler {
+  border-color: transparent;
+
+    &:focus {
+      box-shadow: 0 0 1px 0;
+    }
+
+    &:focus-visible {
+      border: transparent;
+      box-shadow: 0 0 1px 0;
+      outline: transparent;
+    }
+}
+
+//mobile
+@media screen and (max-width: 767px) {
+  .navbar-brand {
+    .img-fluid {
+      height: 28px;
+    }
+  }
+
+  .navbar-toggler {
+    font-size: 16px;
+    padding: 5px 0px;
+
+    &:focus {
+      padding: 5px;
+    }
+  }
+
+  .searchBox {
+    font-size: 14px;
   }
 }

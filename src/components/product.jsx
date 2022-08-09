@@ -23,27 +23,31 @@ const Product = ({ item }) => {
  }
 
   return (
-    <Row>
-      <Col className='d-flex itemProduct' onClick={() => viewDetail(id)}>
-        <Image src={ thumbnail } className='itemProduct-item' />
-        <div className='w-100'>
-          <div className='d-flex justify-content-between'>
-            <div>
-              <span>
-                $ {price.toLocaleString('en')}
-              </span>
-              <Image src={ shipping } />
+      <Row className='bg-white containerProducts'>
+        <Col className='d-flex itemProduct' onClick={ () => viewDetail(id) }>
+          <Image src={ thumbnail } className='itemProduct-item' />
+          <div className='w-100'>
+            <div className='d-flex justify-content-between itemProduct-titleProducts'>
+              <Col sm={ 9 }>
+                <div>
+                  <span className='productPrice'>
+                    $ { price.toLocaleString('en') }
+                  </span>
+                  <Image src={ shipping } className='iconDelivery'/>
+                </div>
+              </Col>
+              <Col className='city-wrapper'>
+                <span className='me-lg-5'>
+                  { city_name }
+                </span>
+              </Col>
             </div>
-            <span className='me-lg-5'>
-              { city_name }
-            </span>
+            <div className='productDescription'>
+            { title }
+            </div>
           </div>
-          <div>
-          { title }
-          </div>
-        </div>
-      </Col>
-    </Row>
+        </Col>
+      </Row>
   );
 }
 
