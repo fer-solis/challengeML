@@ -26,7 +26,7 @@ const DetailProduct = ({ product }) => {
       <Col className='product'>
         <div className='product-content d-flex flex-sm-column flex-lg-row'>
           <Col sm={ 12 } md={ 12 } lg={ 9 } >
-            <Image src={ picture } className='product-content-img img-fluid w-100' />
+            <Image src={ picture } className='product-content-img img-fluid w-100 pe-lg-3' />
           </Col>
           <Col sm={ 12 } md={ 12 } lg={ 3 }>
             <div className='product-content-details'>
@@ -43,7 +43,7 @@ const DetailProduct = ({ product }) => {
             </div>
           </Col>
         </div>
-        <div className='product-description'>
+        <div className='product-description mt-lg-5'>
           <h2 className='product-description-title'>
             Descripcion del producto
           </h2>
