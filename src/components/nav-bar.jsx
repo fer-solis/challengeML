@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
@@ -9,7 +9,13 @@ import logo from '../img/logo.png';
 import search from '../img/search.png';
 
 const NavBar = () => {
-  const [find, setFind] = useState('');
+  const {
+    href,
+  } = window.location;
+  const url = new URL(href);
+  const query = url.searchParams.get("search");
+
+  const [find, setFind] = useState(query ? query : '');
   const [validated, setValidated] = useState(false);
   const handleSubmit = (event) => {
     const form = event.currentTarget;
@@ -46,7 +52,8 @@ const NavBar = () => {
                 placeholder='Nunca dejes de buscar'
                 required
                 type='search'
-                value={ find } onChange={ val => setFind(val.target.value) }
+                value={ find } 
+                onChange={ val => setFind(val.target.value) }
               />
               <Button
                 className='containerSearchIcon'

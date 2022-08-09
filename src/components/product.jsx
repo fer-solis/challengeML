@@ -1,39 +1,43 @@
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image'
-import shipping from '../img/shipping.png'
+import imgShipping from '../img/shipping.png'
 
 const Product = ({ item }) => {
   const {
-    address,
+    city_name,
     id,
     price,
+    free_shipping,
     title,
-    thumbnail,
+    picture,
   } = item;
   
-  const {
-    city_name,
-  } = address;
   console.log({ item });
 
   const viewDetail = (id) => {
     const site = window.location.origin;
     window.location.replace(`${site}/items/${id}`);
- }
+  }
+  const contructPrice = ({
+    amount,
+    decimals,
+  }) => {
+    return parseFloat(`${amount}.${decimals}`);
+  }
 
   return (
       <Row className='bg-white containerProducts'>
         <Col className='d-flex itemProduct' onClick={ () => viewDetail(id) }>
-          <Image src={ thumbnail } className='itemProduct-item' />
+          <Image src={ picture } className='itemProduct-item' />
           <div className='w-100'>
             <div className='d-flex justify-content-between itemProduct-titleProducts'>
               <Col sm={ 9 }>
                 <div>
                   <span className='productPrice'>
-                    $ { price.toLocaleString('en') }
+                    $ { contructPrice(price).toLocaleString('en') }
                   </span>
-                  <Image src={ shipping } className='iconDelivery'/>
+                  { free_shipping ? <Image src={ imgShipping } className='iconDelivery'/> : null}
                 </div>
               </Col>
               <Col className='city-wrapper'>

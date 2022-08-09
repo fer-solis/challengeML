@@ -1,18 +1,29 @@
 import {
   RETRIEVE_SEARCH,
+  SAVE_SEARCH,
 } from "../actions/types";
 
-const initialState = [];
-
-const searchReducer = (search = initialState, action) => {
-  const { type, payload } = action;
-
-  switch (type) {
-    case RETRIEVE_SEARCH:
-      return payload;
-    default:
-      return search;
-  }
+const initialState = {
+  data: [],
+  find: '',
 };
 
-export default searchReducer;
+const actionsMap = {
+  [RETRIEVE_SEARCH]: (state, action) => ({
+    ...state,
+    data: action.payload,
+  }),
+
+  [SAVE_SEARCH]: (state, action) => ({
+    ...state,
+    find: action.payload,
+  }),
+};
+
+export default function reducer(state = initialState, action = {}) {
+  const fn = actionsMap[action.type];
+  if (!fn) {
+    return state;
+  }
+  return fn(state, action);
+}

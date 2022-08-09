@@ -2,7 +2,9 @@ import {
   RETRIEVE_PRODUCT,
 } from "../actions/types";
 
-const initialState = [];
+const initialState = {
+  item:{},
+};
 
 const productReducer = (product = initialState, action) => {
   const { type, payload } = action;
