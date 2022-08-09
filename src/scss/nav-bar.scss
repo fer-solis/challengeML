@@ -1,0 +1,13 @@
+.navbar-wrapper {
+  background-color: $color-primary;
+}
+
+.searchBox {
+  border: none;
+  border-radius: 4% 0% 0% 4%;
+  font-size: 18px;
+
+  &::placeholder {
+    color: $place-holder;
+  }
+}

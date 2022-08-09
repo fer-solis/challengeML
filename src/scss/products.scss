@@ -1,0 +1,38 @@
+.itemProduct {
+  &-item {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+.product {
+  &-content {
+    &-img {
+      width: 680px;
+    }
+
+    &-details {
+      small {
+        font-size: 14px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      h3 {
+        font-size: 46px;
+      }
+    }
+  }
+
+  &-description {
+    &-title {
+      font-size: 28px;
+    }
+
+    &-body {
+      font-size: 16px;
+    }
+  }
+}
