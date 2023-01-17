@@ -40,20 +40,13 @@ export const getSearch = (query) => async (dispatch) => {
       const {
         address,
         condition,
+        currency_id,
         id,
         price,
-        prices,
         shipping,
         thumbnail,
         title,
       } = element;
-
-      const {
-        presentation,
-      } = prices;
-      const {
-        display_currency
-      } = presentation;
 
       const {
         free_shipping,
@@ -72,7 +65,7 @@ export const getSearch = (query) => async (dispatch) => {
         id,
         picture: thumbnail,
         price: {
-          currency: display_currency,
+          currency: currency_id,
           amount: descompositionPrice[0],
           decimals: descompositionPrice[1],
         },

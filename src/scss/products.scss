@@ -37,6 +37,7 @@
   &:not(:last-child) {
     .itemProduct{
       border-bottom: 1px solid $bg-searchIcon;
+      padding-bottom: 32px;
     }
   }
 }
@@ -57,7 +58,6 @@
 
 .productDescription {
   font-size: 18px;
-  line-height: 0px;
 }
 
 //mobile results
@@ -228,5 +228,11 @@
         padding-bottom: 24px; 
       }
     }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .w-lg-50 {
+    width: 50% !important;
   }
 }

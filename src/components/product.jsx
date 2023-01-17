@@ -46,7 +46,7 @@ const Product = ({ item }) => {
                 </span>
               </Col>
             </div>
-            <div className='productDescription'>
+            <div className='productDescription w-lg-50 w-100'>
             { title }
             </div>
           </div>
