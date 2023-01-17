@@ -73,7 +73,7 @@ Así como considerar:
 
 - Acostumbro a trabajar bajo la metodología mobile first, en este caso empecé con versión web porque fue la base que se me compartió pero decidí trabajar también la versión tablet y mobile para que sea un sitio responsive acomodándolo según mi criterio.
 - Se pide la entrega en repositorio de Github pero decidí publicarlo sobre un subdominio
-- [ ] **https://landing.helmmxfarma.com/**
+- [ ] **https://challengeml.helmmxfarma.com/**
 - Utilizo React 18.2.0, Bootstrap, Redux, Helmmx, Jest
 
 
